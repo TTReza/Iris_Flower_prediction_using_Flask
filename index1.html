@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            font-family: 'Arimo', sans-serif;
+        }
+
+        .login {
+            width: 300px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+
+        h1 {
+            font-family: 'Pacifico';
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .prediction-text {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Flower Class Prediction</h1>
+
+        <p>Please make sure you put: <br>
+        Sepal Length within 4-8 <br>
+        Sepal Width within 2.5-5 <br>
+        Petal Length within 1-2 <br>
+        Petal Width within 0-0.7 </p>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="Sepal_Length" placeholder="Sepal Length" required="required" />
+            <input type="text" name="Sepal_Width" placeholder="Sepal Width" required="required" />
+            <input type="text" name="Petal_Length" placeholder="Petal Length" required="required" />
+            <input type="text" name="Petal_Width" placeholder="Petal Width" required="required" />
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div class="prediction-text">
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+
+</html>
