@@ -7,3 +7,4 @@ The whole file contains:
 3. app.py - simple flask api constructed
 
 Hope as a beginner you will like it.
+![image](https://github.com/TTReza/Iris_Flower_prediction_using_Flask/assets/65496488/cb52c427-6eef-46cf-af14-a04764b0ecd7)
